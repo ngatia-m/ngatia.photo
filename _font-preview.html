@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Playfair+Display:wght@400;500&family=DM+Serif+Display&family=Josefin+Sans:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f8f7f4; font-family: 'Inter', sans-serif; padding: 4rem 3rem; }
+    h2 { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; font-family: 'Inter', sans-serif; font-weight: 400; margin-bottom: 1.5rem; }
+    .option { border-bottom: 1px solid #e4e2dd; padding: 3rem 0; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+    .option:last-child { border-bottom: none; }
+    .name { line-height: 1; }
+    .meta { text-align: right; flex-shrink: 0; }
+    .meta .label { font-size: 1rem; color: #1c1c1a; font-weight: 400; margin-bottom: 0.35rem; font-family: 'Inter', sans-serif; }
+    .meta .desc  { font-size: 0.8125rem; color: #aaa; font-family: 'Inter', sans-serif; }
+
+    .f1 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: #1c1c1a; }
+    .f2 { font-family: 'Playfair Display', serif;   font-size: 1.9rem; font-weight: 400; color: #1c1c1a; }
+    .f3 { font-family: 'DM Serif Display', serif;   font-size: 1.9rem; font-weight: 400; color: #1c1c1a; }
+    .f4 { font-family: 'Josefin Sans', sans-serif;  font-size: 1.5rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #1c1c1a; }
+
+    /* Simulate it in the header context */
+    .header-sim { background: rgba(248,247,244,0.96); border-bottom: 1px solid #e4e2dd; padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .nav-sim { display: flex; gap: 2rem; }
+    .nav-sim span { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body>
+
+  <h2>Name font options — shown in header context</h2>
+
+  <div class="option">
+    <div>
+      <div class="header-sim">
+        <span class="name f1">Muthoni Ngatia</span>
+        <div class="nav-sim"><span>Work</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+    <div class="meta">
+      <p class="label">A — Cormorant Garamond</p>
+      <p class="desc">Very thin, high-contrast serifs<br>Art world / fashion editorial</p>
+    </div>
+  </div>
+
+  <div class="option">
+    <div>
+      <div class="header-sim">
+        <span class="name f2">Muthoni Ngatia</span>
+        <div class="nav-sim"><span>Work</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+    <div class="meta">
+      <p class="label">B — Playfair Display</p>
+      <p class="desc">Bold thick-thin contrast<br>Classic editorial / magazine</p>
+    </div>
+  </div>
+
+  <div class="option">
+    <div>
+      <div class="header-sim">
+        <span class="name f3">Muthoni Ngatia</span>
+        <div class="nav-sim"><span>Work</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+    <div class="meta">
+      <p class="label">C — DM Serif Display</p>
+      <p class="desc">Softer contrast than Playfair<br>Clean, contemporary</p>
+    </div>
+  </div>
+
+  <div class="option">
+    <div>
+      <div class="header-sim">
+        <span class="name f4">Muthoni Ngatia</span>
+        <div class="nav-sim"><span>Work</span><span>About</span><span>Contact</span></div>
+      </div>
+    </div>
+    <div class="meta">
+      <p class="label">D — Josefin Sans</p>
+      <p class="desc">Thin geometric, all-caps<br>Modernist, minimal</p>
+    </div>
+  </div>
+
+</body>
+</html>

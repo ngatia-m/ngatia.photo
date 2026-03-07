@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muthoni Ngatia — Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #f8f7f4; color: #1c1c1a; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── FONT SYSTEM ─────────────────────────────────────────────
+       Josefin Sans  →  all UI chrome (name, nav, labels, captions)
+       EB Garamond   →  all display / heading text
+       Inter         →  body paragraphs only
+    ──────────────────────────────────────────────────────────── */
+
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 200; background: rgba(248,247,244,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid #e4e2dd; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; }
+    .site-name { font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; }
+    nav { display: flex; gap: 2.25rem; }
+    nav a { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #888; transition: color 0.2s; }
+    nav a:hover { color: #1c1c1a; }
+
+    /* HERO */
+    .hero { overflow: hidden; background: #222; }
+    .hero img { width: 100%; height: 85vh; min-height: 520px; object-fit: cover; object-position: center 30%; }
+
+    /* INTRO */
+    .intro-section { padding: 5.5rem 0 3.5rem; }
+    .intro-section h1 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(2.25rem, 4.5vw, 4rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.015em; max-width: 20ch; }
+    .intro-section p { margin-top: 1.25rem; font-size: 1.0625rem; color: #777; max-width: 48ch; font-weight: 300; line-height: 1.7; }
+
+    /* SECTION META */
+    .section-meta { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem; }
+    .section-label { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: #bbb; white-space: nowrap; }
+    .section-rule { flex: 1; height: 1px; background: #e4e2dd; }
+
+    /* PHOTO GRID */
+    #work { padding: 5rem 0 6rem; }
+    .masonry-grid { columns: 3; column-gap: 0.875rem; }
+    .photo-item { break-inside: avoid; margin-bottom: 0.875rem; overflow: hidden; position: relative; background: #e8e7e4; cursor: zoom-in; }
+    .photo-item img { width: 100%; display: block; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform; }
+    .photo-item:hover img { transform: scale(1.035); }
+
+    /* ABOUT */
+    #about { padding: 5.5rem 0 6rem; border-top: 1px solid #e4e2dd; }
+    .about-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: start; }
+    .about-text h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.75rem,3vw,2.75rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.75rem; }
+    .about-text p { font-size: 1rem; color: #666; line-height: 1.85; margin-bottom: 1.1rem; font-weight: 300; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-image img { width: 100%; }
+    .about-image-caption { font-family: 'Josefin Sans', sans-serif; margin-top: 0.75rem; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; }
+
+    /* CONTACT */
+    #contact { padding: 5.5rem 0 6rem; border-top: 1px solid #e4e2dd; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .contact-intro h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.75rem,3vw,2.75rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
+    .contact-intro p { font-size: 1rem; color: #666; line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+    .contact-intro p:last-child { margin-bottom: 0; }
+    .contact-intro a { border-bottom: 1px solid #ddd; transition: border-color 0.2s; }
+    .contact-intro a:hover { border-color: #1c1c1a; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+    .contact-form label { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; display: flex; flex-direction: column; gap: 0.4rem; }
+    .contact-form input, .contact-form textarea { font-family: 'Inter', sans-serif; font-size: 0.9375rem; font-weight: 300; color: #1c1c1a; background: transparent; border: none; border-bottom: 1px solid #ddd; padding: 0.5rem 0; outline: none; transition: border-color 0.2s; width: 100%; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #1c1c1a; }
+    .contact-form textarea { resize: none; height: 100px; }
+    .contact-form button { align-self: flex-start; margin-top: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; background: none; border: 1px solid #1c1c1a; color: #1c1c1a; padding: 0.65rem 1.5rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .contact-form button:hover { background: #1c1c1a; color: #f8f7f4; }
+    .contact-form .form-note { font-size: 0.75rem; color: #ccc; margin-top: 0.25rem; font-style: italic; }
+
+    /* FOOTER */
+    footer { background: #1c1c1a; color: #e0ddd6; padding: 3.5rem 0; }
+    .footer-inner { display: flex; align-items: flex-end; justify-content: space-between; }
+    .footer-name { font-family: 'EB Garamond', Georgia, serif; font-size: 2rem; font-weight: 400; color: #f8f7f4; line-height: 1; margin-bottom: 0.4rem; }
+    .footer-sub { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: #555; }
+    .footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem; }
+    .footer-insta { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.1em; color: #888; transition: color 0.2s; }
+    .footer-insta:hover { color: #e0ddd6; }
+    .footer-copy { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.1em; color: #444; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,9,8,0.96); align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lb-img-wrap { max-width: calc(100vw - 9rem); max-height: calc(100vh - 5rem); }
+    .lb-img-wrap img { max-width: 100%; max-height: calc(100vh - 5rem); object-fit: contain; box-shadow: 0 40px 100px rgba(0,0,0,0.7); transition: opacity 0.2s; }
+    .lb-img-wrap img.loading { opacity: 0; }
+    .lb-backdrop { position: absolute; inset: 0; cursor: zoom-out; }
+    .lb-close { position: fixed; top: 1.5rem; right: 1.75rem; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.75rem; cursor: pointer; transition: color 0.2s; z-index: 1001; padding: 0.5rem; font-family: inherit; }
+    .lb-close:hover { color: #fff; }
+    .lb-prev, .lb-next { position: fixed; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.4); font-size: 2.5rem; cursor: pointer; transition: color 0.2s; padding: 1.25rem 1rem; z-index: 1001; font-family: inherit; }
+    .lb-prev { left: 0.5rem; } .lb-next { right: 0.5rem; }
+    .lb-prev:hover, .lb-next:hover { color: #fff; }
+    .lb-counter { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.35); font-size: 0.75rem; letter-spacing: 0.12em; font-family: 'Josefin Sans', sans-serif; font-weight: 300; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) { .masonry-grid { columns: 2; } .about-grid { grid-template-columns: 1fr; gap: 3rem; } .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; } .footer-inner { flex-direction: column; gap: 2rem; align-items: flex-start; } .footer-right { text-align: left; align-items: flex-start; } }
+    @media (max-width: 640px) { .masonry-grid { columns: 1; } .header-inner { padding: 1rem; } nav { gap: 1.25rem; } .hero img { height: 65vh; } .lb-img-wrap { max-width: calc(100vw - 3rem); } .lb-prev { left: 0; } .lb-next { right: 0; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner container">
+    <a href="#" class="site-name">Muthoni Ngatia</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="DSCF1645.jpg" alt="Street photography by Muthoni Ngatia">
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <h1>Street &amp; Documentary<br>Photography</h1>
+    <p>Authentic moments from the markets, streets, and celebrations around the world.</p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-meta">
+      <span class="section-label">Selected Work</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="masonry-grid" id="photoGrid"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-meta">
+      <span class="section-label">About</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Documenting the world, one frame at a time.</h2>
+        <p>Muthoni Ngatia is a documentary and street photographer from Nairobi, Kenya, drawn to the unguarded moments that reveal the texture of everyday life. Her work takes her across continents — from the vibrant fish markets of Mumbai and the narrow alleys of Zanzibar, to the colourful street scenes of Latin America and the wide skies of Angola.</p>
+      </div>
+      <div class="about-image">
+        <img src="PC300671.jpg" alt="Photography by Muthoni Ngatia">
+        <p class="about-image-caption">Angola</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-meta">
+      <span class="section-label">Contact</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <h2>Get in touch.</h2>
+        <p>For prints, or just to say hello.</p>
+        <p><a href="https://instagram.com/noni.ngatia" target="_blank" rel="noopener">@noni.ngatia ↗</a></p>
+      </div>
+      <!--
+        CONTACT FORM SETUP (one-time, 2 minutes):
+        1. Create a free account at formspree.io
+        2. Click "New Form" and enter ngatia@gmail.com as the destination
+        3. Copy your form ID (looks like "xabc1234")
+        4. Replace YOUR_FORM_ID below with that ID
+        Messages will be forwarded to your Gmail — your address never appears on the page.
+      -->
+      <form class="contact-form" action="https://formspree.io/f/xbdzjwdq" method="POST">
+        <label>Name
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>Email
+          <input type="email" name="email" required placeholder="your@email.com">
+        </label>
+        <label>Message
+          <textarea name="message" required placeholder="..."></textarea>
+        </label>
+        <button type="submit">Send →</button>
+        <p class="form-note">Your message will be forwarded to Muthoni directly.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-name">Muthoni Ngatia</p>
+        <p class="footer-sub">Nairobi, Kenya</p>
+      </div>
+      <div class="footer-right">
+        <a class="footer-insta" href="https://instagram.com/noni.ngatia" target="_blank" rel="noopener">@noni.ngatia</a>
+        <p class="footer-copy">© 2026 Muthoni Ngatia</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lb-backdrop" id="lbBackdrop"></div>
+  <button class="lb-close" id="lbClose">&#215;</button>
+  <button class="lb-prev" id="lbPrev">&#8249;</button>
+  <button class="lb-next" id="lbNext">&#8250;</button>
+  <div class="lb-img-wrap"><img id="lbImg" src="" alt=""></div>
+  <p class="lb-counter" id="lbCounter"></p>
+</div>
+
+<script>
+  // ============================================================
+  // PHOTOS — to add a new photo, copy any line below and change
+  // the filename. Order determines colour sequence in the grid.
+  // ============================================================
+  const photos = [
+    { file: 'DSCF4032.jpg' },
+    { file: 'DSC_2172.jpg'  },
+    { file: 'DSCF3235.jpg' },
+    { file: 'P1301471.jpg'  },
+    { file: 'P1301499.jpg'  },
+    { file: 'DSCF3788.jpg' },
+    { file: 'DSCF2407.jpg' },
+    { file: 'DSCF4633.jpg' },
+    { file: 'DSCF5437.jpg' },
+    { file: 'DSCF1645.jpg' },
+    { file: 'DSCF0343.jpg' },
+    { file: 'DSCF0792.jpg' },
+    { file: 'DSCF3402.jpg' },
+    { file: 'DSCF1858.jpg' },
+    { file: 'DSCF5289.jpg' },
+    { file: 'DSCF0133.jpg' },
+    { file: 'DSCF3904.jpg' },
+    { file: 'P1301589.jpg'  },
+    { file: 'PC300671.jpg'  },
+    { file: 'PC300673.jpg'  },
+  ];
+
+  function renderGrid() {
+    const grid = document.getElementById('photoGrid');
+    grid.innerHTML = photos.map((p, i) => `
+      <div class="photo-item" data-index="${i}">
+        <img src="${p.file}" alt="">
+      </div>`).join('');
+    grid.querySelectorAll('.photo-item img').forEach((img, i) => {
+      img.addEventListener('click', () => openLightbox(i));
+    });
+  }
+
+  let currentIndex = 0;
+
+  function openLightbox(i) {
+    currentIndex = i;
+    const img = document.getElementById('lbImg');
+    img.classList.add('loading');
+    const tmp = new Image();
+    tmp.onload = () => { img.src = photos[i].file; img.classList.remove('loading'); };
+    tmp.src = photos[i].file;
+    document.getElementById('lbCounter').textContent = `${i + 1} / ${photos.length}`;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { document.getElementById('lbImg').src = ''; }, 300);
+  }
+
+  function navLightbox(dir) {
+    openLightbox((currentIndex + dir + photos.length) % photos.length);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderGrid();
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbBackdrop').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); navLightbox(-1); });
+    document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); navLightbox(1); });
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+    let tx = 0;
+    const lb = document.getElementById('lightbox');
+    lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      const d = tx - e.changedTouches[0].clientX;
+      if (Math.abs(d) > 50) navLightbox(d > 0 ? 1 : -1);
+    });
+  });
+</script>
+</body>
+</html>
