@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Working files — keep these out of search results.
+Disallow: /_font-preview.html
+Disallow: /dark.html
+Disallow: /grid.html
+Disallow: /essay.html
+Disallow: /originals/
