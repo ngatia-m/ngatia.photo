@@ -1,330 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <script data-goatcounter="https://ngatia.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mũthoni Ngatia — Photography</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #f8f7f4; color: #1c1c1a; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1360px; margin: 0 auto; padding: 0 2rem; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* ── FONT SYSTEM ─────────────────────────────────────────────
-       Josefin Sans  →  all UI chrome (name, nav, labels, captions)
-       EB Garamond   →  all display / heading text
-       Inter         →  body paragraphs only
-    ──────────────────────────────────────────────────────────── */
+<title>Mũthoni Ngatia — Street &amp; Documentary Photography</title>
+<meta name="description" content="Street and documentary photography by Mũthoni Ngatia, made in Nairobi and on the road. Published in Msafiri, Kenya Airways' inflight magazine.">
+<link rel="canonical" href="https://www.ngatia.photo/">
 
-    /* HEADER */
-    header { position: sticky; top: 0; z-index: 200; background: rgba(248,247,244,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid #e4e2dd; }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; }
-    .site-name { font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; }
-    nav { display: flex; gap: 2.25rem; }
-    nav a { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #888; transition: color 0.2s; }
-    nav a:hover { color: #1c1c1a; }
+<!-- Link previews: this is what shows up when the site is shared on WhatsApp,
+     Instagram, Slack, or pasted into an email to an editor. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mũthoni Ngatia">
+<meta property="og:url" content="https://www.ngatia.photo/">
+<meta property="og:title" content="Mũthoni Ngatia — Street &amp; Documentary Photography">
+<meta property="og:description" content="Street and documentary photography, made in Nairobi and on the road.">
+<meta property="og:image" content="https://www.ngatia.photo/images/DSCF1645.jpg">
+<meta property="og:image:alt" content="Street photograph by Mũthoni Ngatia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mũthoni Ngatia — Street &amp; Documentary Photography">
+<meta name="twitter:description" content="Street and documentary photography, made in Nairobi and on the road.">
+<meta name="twitter:image" content="https://www.ngatia.photo/images/DSCF1645.jpg">
 
-    /* HERO */
-    .hero { overflow: hidden; background: #222; }
-    .hero img { width: 100%; height: 85vh; min-height: 520px; object-fit: cover; object-position: center 30%; }
+<meta name="theme-color" content="#fbfbf9">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
-    /* INTRO */
-    .intro-section { padding: 5.5rem 0 3.5rem; }
-    .intro-section h1 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(2.25rem, 4.5vw, 4rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.015em; max-width: 20ch; }
-    .intro-section p { margin-top: 1.25rem; font-size: 1.0625rem; color: #777; max-width: 48ch; font-weight: 300; line-height: 1.7; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-    /* SECTION META */
-    .section-meta { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem; }
-    .section-label { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: #bbb; white-space: nowrap; }
-    .section-rule { flex: 1; height: 1px; background: #e4e2dd; }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mũthoni Ngatia",
+  "url": "https://www.ngatia.photo/",
+  "jobTitle": "Photographer",
+  "description": "Street and documentary photographer from Nairobi, Kenya.",
+  "email": "mailto:hello@ngatia.photo",
+  "sameAs": ["https://instagram.com/noni.ngatia"]
+}
+</script>
 
-    /* PHOTO GRID */
-    #work { padding: 5rem 0 6rem; }
-    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.875rem; }
-    .photo-item { overflow: hidden; position: relative; background: #e8e7e4; cursor: zoom-in; aspect-ratio: 4/3; }
-    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform; }
-    .photo-item:hover img { transform: scale(1.035); }
+<style>
+:root{
+  --paper:#fbfbf9;
+  --field:#f2f1ed;
+  --ink:#1b1b19;
+  --soft:#77756f;
+  --rule:#e2e0d9;
 
-    /* ABOUT */
-    #about { padding: 5.5rem 0 6rem; border-top: 1px solid #e4e2dd; }
-    .about-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: start; }
-    .about-text h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.75rem,3vw,2.75rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.75rem; }
-    .about-text p { font-size: 1rem; color: #666; line-height: 1.85; margin-bottom: 1.1rem; font-weight: 300; }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-image img { width: 100%; }
-    .about-image-caption { font-family: 'Josefin Sans', sans-serif; margin-top: 0.75rem; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; }
+  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
 
-    /* PRESS */
-    #press { padding: 5.5rem 0 6rem; border-top: 1px solid #e4e2dd; }
-    .press-item h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.75rem,3vw,2.75rem); font-weight: 400; line-height: 1.15; margin-bottom: 0.5rem; }
-    .press-meta { font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; margin-bottom: 1.25rem; }
-    .press-item p.press-desc { font-size: 1rem; color: #666; line-height: 1.85; font-weight: 300; max-width: 60ch; margin-bottom: 1.5rem; }
-    .press-link { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 2px; transition: border-color 0.2s; }
-    .press-link:hover { border-color: #1c1c1a; }
+  --pad:clamp(1.25rem,5vw,4.5rem);
+  --measure:60ch;
+}
 
-    /* CONTACT */
-    #contact { padding: 5.5rem 0 6rem; border-top: 1px solid #e4e2dd; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-    .contact-intro h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.75rem,3vw,2.75rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
-    .contact-intro p { font-size: 1rem; color: #666; line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
-    .contact-intro p:last-child { margin-bottom: 0; }
-    .contact-intro a { border-bottom: 1px solid #ddd; transition: border-color 0.2s; }
-    .contact-intro a:hover { border-color: #1c1c1a; }
-    .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
-    .contact-form label { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; display: flex; flex-direction: column; gap: 0.4rem; }
-    .contact-form input, .contact-form textarea { font-family: 'Inter', sans-serif; font-size: 0.9375rem; font-weight: 300; color: #1c1c1a; background: transparent; border: none; border-bottom: 1px solid #ddd; padding: 0.5rem 0; outline: none; transition: border-color 0.2s; width: 100%; }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: #1c1c1a; }
-    .contact-form textarea { resize: none; height: 100px; }
-    .contact-form button { align-self: flex-start; margin-top: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; background: none; border: 1px solid #1c1c1a; color: #1c1c1a; padding: 0.65rem 1.5rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
-    .contact-form button:hover { background: #1c1c1a; color: #f8f7f4; }
-    .contact-form .form-note { font-size: 0.75rem; color: #ccc; margin-top: 0.25rem; font-style: italic; }
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:clamp(1.0625rem,0.55vw + 0.95rem,1.1875rem);
+  line-height:1.62;
+  font-kerning:normal;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
 
-    /* FOOTER */
-    footer { background: #1c1c1a; color: #e0ddd6; padding: 3.5rem 0; }
-    .footer-inner { display: flex; align-items: flex-end; justify-content: space-between; }
-    .footer-name { font-family: 'EB Garamond', Georgia, serif; font-size: 2rem; font-weight: 400; color: #f8f7f4; line-height: 1; margin-bottom: 0.4rem; }
-    .footer-sub { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: #555; }
-    .footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem; }
-    .footer-insta { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.1em; color: #888; transition: color 0.2s; }
-    .footer-insta:hover { color: #e0ddd6; }
-    .footer-copy { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.1em; color: #444; }
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-    /* LIGHTBOX */
-    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,9,8,0.96); align-items: center; justify-content: center; }
-    .lightbox.active { display: flex; }
-    .lb-img-wrap { max-width: calc(100vw - 9rem); max-height: calc(100vh - 5rem); }
-    .lb-img-wrap img { max-width: 100%; max-height: calc(100vh - 5rem); object-fit: contain; box-shadow: 0 40px 100px rgba(0,0,0,0.7); transition: opacity 0.2s; }
-    .lb-img-wrap img.loading { opacity: 0; }
-    .lb-backdrop { position: absolute; inset: 0; cursor: zoom-out; }
-    .lb-close { position: fixed; top: 1.5rem; right: 1.75rem; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.75rem; cursor: pointer; transition: color 0.2s; z-index: 1001; padding: 0.5rem; font-family: inherit; }
-    .lb-close:hover { color: #fff; }
-    .lb-prev, .lb-next { position: fixed; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.4); font-size: 2.5rem; cursor: pointer; transition: color 0.2s; padding: 1.25rem 1rem; z-index: 1001; font-family: inherit; }
-    .lb-prev { left: 0.5rem; } .lb-next { right: 0.5rem; }
-    .lb-prev:hover, .lb-next:hover { color: #fff; }
-    .lb-counter { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.35); font-size: 0.75rem; letter-spacing: 0.12em; font-family: 'Josefin Sans', sans-serif; font-weight: 300; }
+.skip{
+  position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);
+  padding:.7rem 1rem;z-index:100;font-family:var(--sans);font-size:.85rem;
+}
+.skip:focus{left:0}
 
-    /* RESPONSIVE */
-    @media (max-width: 1024px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } .about-grid { grid-template-columns: 1fr; gap: 3rem; } .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; } .footer-inner { flex-direction: column; gap: 2rem; align-items: flex-start; } .footer-right { text-align: left; align-items: flex-start; } }
-    @media (max-width: 640px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } .header-inner { padding: 1rem; } nav { gap: 1.25rem; } .hero img { height: 65vh; } .lb-img-wrap { max-width: calc(100vw - 3rem); } .lb-prev { left: 0; } .lb-next { right: 0; } }
-  </style>
+/* ---------- masthead ---------- */
+.masthead{
+  position:sticky;top:0;z-index:40;
+  display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;
+  padding:.85rem var(--pad);
+  background:rgba(251,251,249,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.masthead a{text-decoration:none}
+.wordmark{font-size:1.0625rem;letter-spacing:.01em}
+.masthead nav{display:flex;gap:clamp(.9rem,2.5vw,1.9rem);font-family:var(--sans);font-size:.78rem;letter-spacing:.02em}
+.masthead nav a{color:var(--soft);padding-bottom:2px;border-bottom:1px solid transparent}
+.masthead nav a:hover,.masthead nav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(1.5rem,4vw,3rem) var(--pad) 0}
+.plate{
+  background:var(--field);
+  aspect-ratio:3/2;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.plate img{width:100%;height:100%;object-fit:cover}
+.plate-caption{
+  display:flex;justify-content:space-between;gap:1rem;
+  font-family:var(--sans);font-size:.72rem;color:var(--soft);
+  padding-top:.6rem;
+}
+
+.statement{
+  padding:clamp(2.75rem,7vw,5rem) var(--pad) clamp(2.5rem,6vw,4rem);
+  max-width:34ch;
+}
+.statement h1{
+  margin:0;
+  font-weight:400;
+  font-size:clamp(2.25rem,6.5vw,4rem);
+  line-height:1.04;
+  letter-spacing:-.015em;
+}
+.statement p{
+  margin:1.1rem 0 0;
+  font-size:clamp(1.0625rem,1.1vw + .85rem,1.3125rem);
+  color:var(--soft);
+  line-height:1.5;
+  max-width:26ch;
+}
+
+/* ---------- section furniture ---------- */
+.band{padding:clamp(3rem,7vw,5.5rem) var(--pad);border-top:1px solid var(--rule)}
+.band > h2{
+  margin:0 0 clamp(1.75rem,4vw,2.75rem);
+  font-family:var(--sans);font-weight:500;font-size:.78rem;letter-spacing:.02em;
+  color:var(--soft);
+}
+
+/* ---------- contact sheet ---------- */
+.sheet{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:clamp(.75rem,1.6vw,1.4rem);
+}
+.frame{
+  appearance:none;border:0;padding:0;margin:0;
+  background:none;font:inherit;color:inherit;
+  text-align:left;cursor:pointer;display:block;width:100%;
+}
+.frame-img{
+  background:var(--field);
+  aspect-ratio:3/2;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.frame-img img{
+  width:100%;height:100%;object-fit:contain;
+  transition:opacity .25s ease;
+}
+.frame:hover .frame-img img,
+.frame:focus-visible .frame-img img{opacity:.82}
+.frame-meta{
+  display:flex;justify-content:space-between;gap:.75rem;
+  font-family:var(--sans);font-size:.7rem;color:var(--soft);
+  padding-top:.5rem;
+}
+.frame-meta .no{font-variant-numeric:tabular-nums}
+
+/* ---------- prose ---------- */
+.prose{max-width:var(--measure)}
+.prose p{margin:0 0 1.15rem}
+.prose p:last-child{margin-bottom:0}
+.prose a{text-decoration-thickness:1px;text-underline-offset:3px}
+
+.gear{
+  margin:2rem 0 0;padding:0;list-style:none;
+  font-family:var(--sans);font-size:.8rem;color:var(--soft);line-height:1.8;
+}
+
+/* ---------- press ---------- */
+.feature{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;
+  max-width:var(--measure);
+}
+.feature h3{margin:0 0 .35rem;font-weight:500;font-size:1.5rem;line-height:1.2}
+.feature .where{
+  font-family:var(--sans);font-size:.76rem;color:var(--soft);margin:0 0 .9rem;
+}
+.feature p{margin:0 0 1rem}
+
+.credits{
+  margin:clamp(2.5rem,5vw,3.5rem) 0 0;padding:0;list-style:none;
+  max-width:var(--measure);
+}
+.credits li{
+  display:flex;justify-content:space-between;gap:1.5rem;
+  padding:.85rem 0;border-top:1px solid var(--rule);
+  font-size:1rem;
+}
+.credits li:last-child{border-bottom:1px solid var(--rule)}
+.credits .year{font-family:var(--sans);font-size:.76rem;color:var(--soft);white-space:nowrap;padding-top:.22rem}
+
+/* ---------- contact ---------- */
+.contact-grid{
+  display:grid;gap:clamp(2.5rem,5vw,4rem);
+  grid-template-columns:minmax(0,1fr);
+  align-items:start;
+}
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:minmax(0,26ch) minmax(0,1fr)}
+}
+.reach{margin:0;font-family:var(--sans);font-size:.88rem;line-height:2.1}
+.reach a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+.reach a:hover{border-bottom-color:var(--ink)}
+
+form{max-width:46ch}
+.field{margin:0 0 1.1rem}
+.field label{
+  display:block;font-family:var(--sans);font-size:.74rem;color:var(--soft);
+  margin-bottom:.35rem;
+}
+.field input,.field textarea{
+  width:100%;font:inherit;font-size:1rem;color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--rule);border-radius:0;
+  padding:.65rem .7rem;
+}
+.field textarea{min-height:8rem;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+button[type=submit]{
+  font-family:var(--sans);font-size:.82rem;
+  background:var(--ink);color:var(--paper);
+  border:1px solid var(--ink);border-radius:0;
+  padding:.72rem 1.5rem;cursor:pointer;
+}
+button[type=submit]:hover{background:transparent;color:var(--ink)}
+button[type=submit][disabled]{opacity:.5;cursor:default}
+.form-msg{
+  font-family:var(--sans);font-size:.82rem;margin:.9rem 0 0;line-height:1.5;
+}
+
+/* ---------- footer ---------- */
+footer{
+  padding:2.5rem var(--pad) 3.5rem;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
+  font-family:var(--sans);font-size:.74rem;color:var(--soft);
+}
+footer a{color:var(--soft);text-decoration:none;border-bottom:1px solid transparent}
+footer a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:90;
+  background:#111110;
+  display:none;
+  padding:clamp(.75rem,2.5vw,2rem);
+}
+.lightbox[open]{display:grid;grid-template-rows:1fr auto}
+.lightbox::backdrop{background:#111110}
+.lightbox img{
+  width:100%;height:100%;object-fit:contain;
+  margin:0 auto;
+}
+.lb-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding-top:.9rem;
+  font-family:var(--sans);font-size:.74rem;color:#a8a69e;
+}
+.lb-bar .no{font-variant-numeric:tabular-nums}
+.lb-controls{display:flex;gap:.35rem}
+.lb-controls button{
+  appearance:none;background:none;border:1px solid #3a3937;color:#e8e6df;
+  font:inherit;font-size:.78rem;line-height:1;
+  padding:.5rem .8rem;cursor:pointer;border-radius:0;
+}
+.lb-controls button:hover{background:#262523;border-color:#5a5854}
+.lightbox :focus-visible{outline:2px solid #e8e6df;outline-offset:2px}
+
+@media (max-width:640px){
+  .plate,.frame-img{aspect-ratio:4/3}
+  .sheet{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+</style>
 </head>
-<body>
 
-<header>
-  <div class="header-inner container">
-    <a href="#" class="site-name">Mũthoni Ngatia</a>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#press">Press</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+<body>
+<a class="skip" href="#work">Skip to the photographs</a>
+
+<header class="masthead">
+  <a class="wordmark" href="#top">Mũthoni Ngatia</a>
+  <nav aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#press">Press</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <img src="DSCF1645.jpg" alt="Street photography by Mũthoni Ngatia">
-</section>
+<main id="top">
 
-<section class="intro-section">
-  <div class="container">
-    <h1>Street &amp; Documentary<br>Photography</h1>
-    <p>Authentic moments from around the world.</p>
-  </div>
-</section>
-
-<section id="work">
-  <div class="container">
-    <div class="section-meta">
-      <span class="section-label">Selected Work</span>
-      <span class="section-rule"></span>
+  <section class="hero">
+    <figure class="plate" style="margin:0">
+      <img id="hero-img" src="" alt="" fetchpriority="high" decoding="async">
+    </figure>
+    <div class="plate-caption">
+      <span id="hero-place"></span>
+      <span id="hero-count"></span>
     </div>
-    <div class="photo-grid" id="photoGrid"></div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <div class="container">
-    <div class="section-meta">
-      <span class="section-label">About</span>
-      <span class="section-rule"></span>
+  <div class="statement">
+    <h1>Street and documentary photography.</h1>
+    <p>Made in Nairobi and on the road, mostly in markets, port towns and the first hour of the morning.</p>
+  </div>
+
+  <section class="band" id="work">
+    <h2>Selected work</h2>
+    <div class="sheet" id="sheet"></div>
+  </section>
+
+  <section class="band" id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I'm an economist and a street and documentary photographer from Nairobi, Kenya. I photograph unguarded moments — the ordinary things people do when they aren't performing for anyone — and I'm most interested in the patterns underneath them.</p>
+      <p>That pulls me toward markets, port towns, Chinatowns and fishing communities at first light: places where the same small human choreography repeats every day and rewards standing still long enough to see it. I work in hard light and high colour, and I'd rather wait for a frame to assemble itself than arrange one.</p>
+      <ul class="gear">
+        <li>Fujifilm X100VI · Ricoh GR IV · OM-1</li>
+        <li>Member, DC Street Photography Collective</li>
+      </ul>
     </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <h2>Documenting the world, one frame at a time.</h2>
-        <p>I am an economist and documentary and street photographer from Nairobi, Kenya, drawn to the unguarded moments that reveal the magic of everyday life.</p>
+  </section>
+
+  <section class="band" id="press">
+    <h2>Press &amp; exhibitions</h2>
+
+    <div class="feature">
+      <div>
+        <h3>People Watching</h3>
+        <p class="where">Msafiri, Kenya Airways · August–September 2026</p>
+        <p>A feature on street photography, the patterns in human behaviour, and the practice of honest observation. Words and photographs mine.</p>
+        <p><a href="/msafiri-people-watching.pdf">Read the feature (PDF)</a></p>
       </div>
-      <div class="about-image">
-        <img src="PC300671.jpg" alt="Photography by Mũthoni Ngatia">
-        <p class="about-image-caption">Angola</p>
-      </div>
     </div>
-  </div>
-</section>
 
-<section id="press">
-  <div class="container">
-    <div class="section-meta">
-      <span class="section-label">Press</span>
-      <span class="section-rule"></span>
-    </div>
-    <div class="press-item">
-      <h2>People Watching</h2>
-      <p class="press-meta">Msafiri Magazine · Kenya Airways — Aug/Sept 2026</p>
-      <p class="press-desc">A feature on street photography, patterns in human behaviour, and the practice of honest observation — words and photographs by Mũthoni Ngatia.</p>
-      <a href="msafiri-people-watching.pdf" target="_blank" rel="noopener" class="press-link">Read the feature (PDF) ↗</a>
-    </div>
-  </div>
-</section>
+    <ul class="credits">
+      <li><span>Finalist, Women Street Photography Festival</span><span class="year">2026</span></li>
+      <li><span>Raw Photo Fest, Menorca — group exhibition</span><span class="year">2026</span></li>
+    </ul>
+  </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-meta">
-      <span class="section-label">Contact</span>
-      <span class="section-rule"></span>
-    </div>
+  <section class="band" id="contact">
+    <h2>Contact</h2>
     <div class="contact-grid">
-      <div class="contact-intro">
-        <h2>Get in touch.</h2>
-        <!-- <p>For prints, or just to say hello.</p>-->
-        <p><a href="https://instagram.com/noni.ngatia" target="_blank" rel="noopener">@noni.ngatia ↗</a></p>
+      <div>
+        <p class="prose" style="margin:0 0 1.5rem">Available for commissions, editorial assignments and prints. I reply to everything.</p>
+        <p class="reach">
+          <a href="mailto:hello@ngatia.photo">hello@ngatia.photo</a><br>
+          <a href="https://instagram.com/noni.ngatia" rel="me noopener">Instagram @noni.ngatia</a>
+        </p>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/xbdzjwdq" method="POST">
-        <label>Name
-          <input type="text" name="name" required placeholder="Your name">
-        </label>
-        <label>Email
-          <input type="email" name="email" required placeholder="your@email.com">
-        </label>
-        <label>Message
-          <textarea name="message" required placeholder="..."></textarea>
-        </label>
-        <button type="submit">Send →</button>
-       <!-- <p class="form-note">Your message will be forwarded to Mũthoni directly.</p> -->
+
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send message</button>
+        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
       </form>
     </div>
-  </div>
-</section>
+  </section>
+
+</main>
 
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        <p class="footer-name">Mũthoni Ngatia</p>
-      </div>
-      <div class="footer-right">
-        <a class="footer-insta" href="https://instagram.com/noni.ngatia" target="_blank" rel="noopener">@noni.ngatia</a>
-        <p class="footer-copy">© 2026 Mũthoni Ngatia</p>
-      </div>
-    </div>
-  </div>
+  <span>© <span id="year"></span> Mũthoni Ngatia. All photographs are mine.</span>
+  <a href="https://instagram.com/noni.ngatia" rel="me noopener">@noni.ngatia</a>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <div class="lb-backdrop" id="lbBackdrop"></div>
-  <button class="lb-close" id="lbClose">&#215;</button>
-  <button class="lb-prev" id="lbPrev">&#8249;</button>
-  <button class="lb-next" id="lbNext">&#8250;</button>
-  <div class="lb-img-wrap"><img id="lbImg" src="" alt=""></div>
-  <p class="lb-counter" id="lbCounter"></p>
-</div>
+<dialog class="lightbox" id="lightbox" aria-label="Photograph viewer">
+  <img id="lb-img" src="" alt="">
+  <div class="lb-bar">
+    <span id="lb-place"></span>
+    <span class="no" id="lb-no"></span>
+    <span class="lb-controls">
+      <button type="button" id="lb-prev" aria-label="Previous photograph">←</button>
+      <button type="button" id="lb-next" aria-label="Next photograph">→</button>
+      <button type="button" id="lb-close" aria-label="Close viewer">Close</button>
+    </span>
+  </div>
+</dialog>
 
 <script>
-  // ============================================================
-  // PHOTOS — to add a new photo, copy any line below and change
-  // the filename. Order determines colour sequence in the grid.
-  // ============================================================
-  const photos = [
-    { file: 'DSCF4032.jpg' },
-    { file: 'DSC_2172.jpg'  },
-    { file: 'DSCF3235.jpg' },
-   //{ file: 'P1301499.jpg'  },
-    { file: 'DSCF3788.jpg' },
-    { file: 'P1301471.jpg'  },
-    { file: 'DSCF2407.jpg' },
-    { file: 'DSCF5437.jpg' }, // boy looking up
-    { file: 'DSCF1645.jpg' }, // girl and her mum
-    { file: 'DSCF0792.jpg' }, // donkey sanctuary
-    { file: 'DSCF0343.jpg' },
-    //{ file: 'DSCF1858.jpg' },
-    { file: 'PC300673.jpg'  },
-    { file: 'DSCF4633.jpg' }, // man smoking
-    { file: 'DSCF5289.jpg' },
-    { file: 'DSCF0133.jpg' },
-    { file: 'DSCF3904.jpg' },
-    { file: 'DSCF3402.jpg' }, // green lady
-    { file: 'P1301589.jpg'  },
-    { file: 'P9122109.jpg'  }
-   // ,
-  ];
+/* ============================================================
+   EDIT HERE. Everything below the PHOTOS array runs itself.
+   ------------------------------------------------------------
+   place : where it was made. Shows under each frame.
+   alt   : one plain sentence describing the picture, for screen
+           readers and image search. If you leave it blank a
+           generic fallback is used — but filling these in is
+           the single best ten minutes you can spend on this site.
+   ============================================================ */
 
-  function renderGrid() {
-    const grid = document.getElementById('photoGrid');
-    grid.innerHTML = photos.map((p, i) => `
-      <div class="photo-item" data-index="${i}">
-        <img src="${p.file}" alt="">
-      </div>`).join('');
-    grid.querySelectorAll('.photo-item img').forEach((img, i) => {
-      img.addEventListener('click', () => openLightbox(i));
-    });
-  }
+const IMG   = 'images/';        // full-size, ~2000px long edge
+const THUMB = 'images/thumb/';  // grid thumbnails, ~700px
+// Not moved your images into /images/ yet? Set both of the above
+// to '' and everything falls back to the repo root.
 
-  let currentIndex = 0;
+const HERO = 'DSCF1645.jpg';
 
-  function openLightbox(i) {
-    currentIndex = i;
-    const img = document.getElementById('lbImg');
-    img.classList.add('loading');
-    const tmp = new Image();
-    tmp.onload = () => { img.src = photos[i].file; img.classList.remove('loading'); };
-    tmp.src = photos[i].file;
-    document.getElementById('lbCounter').textContent = `${i + 1} / ${photos.length}`;
-    document.getElementById('lightbox').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+const PHOTOS = [
+  { file:'DSCF1645.jpg', place:'',        alt:'' },
+  { file:'PC300671.jpg', place:'Angola',  alt:'' },
+  { file:'PC300673.jpg', place:'Angola',  alt:'' },
+  { file:'DSCF0133.jpg', place:'',        alt:'' },
+  { file:'DSCF0343.jpg', place:'',        alt:'' },
+  { file:'DSCF0792.jpg', place:'',        alt:'' },
+  { file:'DSCF1858.jpg', place:'',        alt:'' },
+  { file:'DSCF2407.jpg', place:'',        alt:'' },
+  { file:'DSCF3235.jpg', place:'',        alt:'' },
+  { file:'DSCF3402.jpg', place:'',        alt:'' },
+  { file:'DSCF3788.jpg', place:'',        alt:'' },
+  { file:'DSCF3904.jpg', place:'',        alt:'' },
+  { file:'DSCF4032.jpg', place:'',        alt:'' },
+  { file:'DSCF4633.jpg', place:'',        alt:'' },
+  { file:'DSCF5289.jpg', place:'',        alt:'' },
+  { file:'DSCF5437.jpg', place:'',        alt:'' },
+  { file:'DSC_2172.jpg', place:'',        alt:'' },
+  { file:'P1301471.jpg', place:'',        alt:'' },
+  { file:'P1301499.jpg', place:'',        alt:'' },
+  { file:'P1301589.jpg', place:'',        alt:'' },
+  { file:'P3016808.jpg', place:'',        alt:'' },
+  { file:'P9098975.jpg', place:'',        alt:'' },
+  { file:'P9122109.jpg', place:'',        alt:'' }
+];
 
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => { document.getElementById('lbImg').src = ''; }, 300);
-  }
+/* ====================== nothing to edit below ====================== */
 
-  function navLightbox(dir) {
-    openLightbox((currentIndex + dir + photos.length) % photos.length);
-  }
+const pad = n => String(n).padStart(2,'0');
+const altFor = p => p.alt || (p.place
+  ? 'Street photograph made in ' + p.place + ' by Mũthoni Ngatia'
+  : 'Street photograph by Mũthoni Ngatia');
 
-  document.addEventListener('DOMContentLoaded', () => {
-    renderGrid();
-    document.getElementById('lbClose').addEventListener('click', closeLightbox);
-    document.getElementById('lbBackdrop').addEventListener('click', closeLightbox);
-    document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); navLightbox(-1); });
-    document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); navLightbox(1); });
-    document.addEventListener('keydown', e => {
-      if (!document.getElementById('lightbox').classList.contains('active')) return;
-      if (e.key === 'Escape')     closeLightbox();
-      if (e.key === 'ArrowLeft')  navLightbox(-1);
-      if (e.key === 'ArrowRight') navLightbox(1);
-    });
-    let tx = 0;
-    const lb = document.getElementById('lightbox');
-    lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-    lb.addEventListener('touchend', e => {
-      const d = tx - e.changedTouches[0].clientX;
-      if (Math.abs(d) > 50) navLightbox(d > 0 ? 1 : -1);
-    });
+/* ---- hero ---- */
+const heroPhoto = PHOTOS.find(p => p.file === HERO) || PHOTOS[0];
+const heroImg = document.getElementById('hero-img');
+heroImg.src = IMG + heroPhoto.file;
+heroImg.alt = altFor(heroPhoto);
+document.getElementById('hero-place').textContent = heroPhoto.place || '';
+document.getElementById('hero-count').textContent = PHOTOS.length + ' photographs';
+
+/* ---- contact sheet ---- */
+const sheet = document.getElementById('sheet');
+PHOTOS.forEach((p, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'frame';
+  btn.type = 'button';
+  btn.dataset.i = i;
+  btn.setAttribute('aria-label', 'Open photograph ' + (i+1) + ' of ' + PHOTOS.length);
+
+  const box = document.createElement('div');
+  box.className = 'frame-img';
+
+  const img = document.createElement('img');
+  img.src = THUMB + p.file;
+  img.alt = altFor(p);
+  img.loading = i < 4 ? 'eager' : 'lazy';
+  img.decoding = 'async';
+  // If the thumbnail hasn't been generated yet, fall back to the full file
+  // rather than showing a broken frame.
+  img.addEventListener('error', () => { img.src = IMG + p.file; }, { once:true });
+
+  const meta = document.createElement('div');
+  meta.className = 'frame-meta';
+  meta.innerHTML = '<span>' + (p.place || '') + '</span><span class="no">' + pad(i+1) + '</span>';
+
+  box.appendChild(img);
+  btn.appendChild(box);
+  btn.appendChild(meta);
+  sheet.appendChild(btn);
+});
+
+/* ---- lightbox ---- */
+const lb      = document.getElementById('lightbox');
+const lbImg   = document.getElementById('lb-img');
+const lbPlace = document.getElementById('lb-place');
+const lbNo    = document.getElementById('lb-no');
+let current   = 0;
+let opener    = null;
+
+function show(i){
+  current = (i + PHOTOS.length) % PHOTOS.length;
+  const p = PHOTOS[current];
+  lbImg.src = IMG + p.file;
+  lbImg.alt = altFor(p);
+  lbPlace.textContent = p.place || '';
+  lbNo.textContent = pad(current+1) + ' / ' + pad(PHOTOS.length);
+  // quietly warm the next frame so arrowing through feels instant
+  const next = new Image();
+  next.src = IMG + PHOTOS[(current+1) % PHOTOS.length].file;
+}
+
+sheet.addEventListener('click', e => {
+  const btn = e.target.closest('.frame');
+  if(!btn) return;
+  opener = btn;
+  show(Number(btn.dataset.i));
+  lb.showModal();
+});
+
+document.getElementById('lb-next').addEventListener('click', () => show(current+1));
+document.getElementById('lb-prev').addEventListener('click', () => show(current-1));
+document.getElementById('lb-close').addEventListener('click', () => lb.close());
+
+lb.addEventListener('click', e => { if(e.target === lb) lb.close(); });
+lb.addEventListener('close', () => { if(opener) opener.focus(); });
+lb.addEventListener('keydown', e => {
+  if(e.key === 'ArrowRight'){ e.preventDefault(); show(current+1); }
+  if(e.key === 'ArrowLeft'){  e.preventDefault(); show(current-1); }
+});
+
+/* ---- which section am I in ---- */
+const links = [...document.querySelectorAll('.masthead nav a')];
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    links.forEach(a => a.removeAttribute('aria-current'));
+    const active = links.find(a => a.getAttribute('href') === '#' + en.target.id);
+    if(active) active.setAttribute('aria-current','true');
   });
+}, { rootMargin:'-45% 0px -50% 0px' });
+['work','about','press','contact'].forEach(id => {
+  const el = document.getElementById(id);
+  if(el) spy.observe(el);
+});
+
+/* ---- contact form ----
+   Submits in the background so the visitor stays on the page.
+   Works with Formspree, Basin, Getform — anything that accepts a
+   POST and understands Accept: application/json. Replace
+   YOUR_FORM_ID in the form's action above with your real endpoint. */
+const form = document.getElementById('contact-form');
+const msg  = document.getElementById('form-msg');
+const submit = form.querySelector('button[type=submit]');
+
+form.addEventListener('submit', async e => {
+  if(form.action.includes('YOUR_FORM_ID')){
+    e.preventDefault();
+    msg.textContent = 'This form isn\u2019t connected yet. Email hello@ngatia.photo in the meantime.';
+    return;
+  }
+  e.preventDefault();
+  submit.disabled = true;
+  msg.textContent = 'Sending…';
+  try{
+    const res = await fetch(form.action, {
+      method:'POST',
+      body:new FormData(form),
+      headers:{ 'Accept':'application/json' }
+    });
+    if(res.ok){
+      form.reset();
+      msg.textContent = 'Sent. I\u2019ll be in touch soon.';
+    }else{
+      msg.textContent = 'That didn\u2019t send. Email hello@ngatia.photo instead and it\u2019ll reach me.';
+    }
+  }catch(err){
+    msg.textContent = 'That didn\u2019t send — check your connection, or email hello@ngatia.photo instead.';
+  }finally{
+    submit.disabled = false;
+  }
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
